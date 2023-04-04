@@ -1,0 +1,32 @@
+<div class="container">
+  <a routerLink="/books">Go back</a>
+  <div class="text-center">
+    <h2>
+      {{_book?.title}}
+    </h2>
+  </div>
+  <div class="text-center">
+    <h6>
+      {{_book?.author}}
+    </h6>
+  </div>
+  <div class="text-center">
+    <p>Genres: <span class="fst-italic">{{_book?.genres}}</span></p>
+  </div>
+  <div class="text-center">
+    <p>
+      {{_book?.publishedOn}}
+      <br>
+      {{_book?.publisher}}
+    </p>
+  </div>
+  <div class="text-center">
+    <h5>
+      ${{_book?.price}}
+    </h5>
+  </div>
+  <div class="text-center">
+    <button class="btn btn-primary" (click)="addToCart(_book)">Add to cart</button>
+  </div>
+</div>
+

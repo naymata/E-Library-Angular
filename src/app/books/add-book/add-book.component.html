@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="text-start">
+    <button class="btn " routerLink="/admin-panel">Go back</button>
+  </div>
+  <div class="position-fixed start-50 top-50 translate-middle">
+    <div class="">
+      <h3 class="h3 text-center fw-bold">
+        Add book
+      </h3>
+    </div>
+    <form (ngSubmit)="addBook()" [formGroup]="addBookForm">
+      <div class="grid-gap-0 row g-3">
+        <div class="form-floating p-1 g-row-6 col-md-5">
+          <input type="text" name="" id="book-name-label" required placeholder="" class="form-control"
+                 [formControlName]="'title'">
+          <label for="book-name-label" class="fst-italic">Book's Title, EXAMPLE: Harry Potter</label>
+        </div>
+        <div class="form-floating p-1 g-row-6 col-md-5">
+          <input type="text" name="" id="book-author-label" placeholder="" required class="form-control"
+                 [formControlName]="'author'">
+          <label for="book-author-label" class="fst-italic">Book's Author, EXAMPLE: J.K. Rowling</label>
+        </div>
+        <div class="form-floating p-1 g-row-6 col-md-5">
+          <input type="text" name="" id="book-publisher-label" placeholder="" required class="form-control"
+                 [formControlName]="'publisher'">
+          <label for="book-publisher-label" class="fst-italic">Book's Publisher, EXAMPLE: Bloomsbury</label>
+        </div>
+        <div class="form-floating p-1 g-row-6 col-md-5 dropdown-list">
+          <span >
+            <ul>
+              <li *ngFor="let g of genres">
+                <label>
+                <input type="checkbox" [formArrayName]="'genres'"  [value]="g" (change)="addGenres($event)">
+                  {{g}}
+                </label>
+              </li>
+            </ul>
+          </span>
+        </div>
+        <div class="form-floating p-1 g-row-6 col-5">
+          <input type="text" name="" id="book-price-label" required placeholder="" class="form-control"
+                 [formControlName]="'price'">
+          <label for="book-price-label" class="fst-italic">Book's Price, EXAMPLE: 29.99</label>
+        </div>
+
+        <div class="form-floating p-1 g-row-4 col-md-5">
+          <input type="text" name="" id="book-date-label" placeholder="" required class="form-control"
+                 [formControlName]="'publishedOn'">
+          <label for="book-date-label" class="fst-italic">Book's published date, EXAMPLE: 1994</label>
+        </div>
+
+
+        <div>
+          <span class="d-flex justify-content-center p-1 g-col-6">
+            <button type="submit" class="btn btn-primary">Add book</button>
+          </span>
+          <span class="d-flex justify-content-center p-1 g-col-6">
+            <button type="reset" class="btn btn-primary">Clear</button>
+          </span>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<ng-container *ngIf="false">
+  <div class="container">
+    <div class="text-end">
+      <h3 class="h3">My cart</h3>
+    </div>
+    <div class="text-center">
+      <h3 class="h3">Your cart is empty</h3>
+      <h6 class="h6">Add products</h6>
+      <button class="btn btn-primary">Go to products</button>
+    </div>
+  </div>
+</ng-container>
+<ng-container *ngIf="true">
+  <div class="container">
+    <div class="card">
+      <div class="text-end">
+        <button class="btn" style="color:red;" (click)="removeAllCart()">Clear Cart</button>
+      </div>
+      <div class="cart-products" *ngFor="let item of productList">
+          <span class="title">
+            {{item.title}}
+          </span>
+        <span class="author">
+        {{item.author}}
+        </span>
+        <span class="price">
+          {{item.price}}
+        </span>
+        <span class="publisher">
+          {{item.publisher}}
+        </span>
+        <span class="">
+          <button class="btn btn-danger" (click)="removeItem(item)">
+            <i class="material-icons">
+              remove_circle
+            </i>
+          </button>
+        </span>
+      </div>
+      <div class="text-end">
+        <button class="addToCart  btn btn-primary" (click)="addCart()">Add to cart</button>
+      </div>
+    </div>
+  </div>
+</ng-container>

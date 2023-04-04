@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="position-fixed top-50 start-50 translate-middle">
+    <div class="">
+      <h1 class="h1 fw-bold text-center">
+        Create account
+      </h1>
+    </div>
+    <br>
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+      <div class="grid-gap-0">
+        <div class="form-floating p-1 g-col-6">
+          <input type="text" class="form-control" required placeholder="" id="username-label" [formControlName]="'username'">
+          <label for="username-label">Enter username</label>
+        </div>
+        <div class="form-floating p-1 g-col-6">
+          <input type="password" class="form-control" required placeholder="" id="password-label" [formControlName]="'password'">
+          <label for="password-label">Enter password</label>
+        </div>
+        <div class="form-floating p-1 g-col-6">
+          <input type="email" name="" id="email-label" class="form-control" required placeholder="" [formControlName]="'email'">
+          <label for="email-label">Enter email</label>
+        </div>
+        <div class="form-floating p-1 g-col-6">
+          <input type="text" name="" id="first-name-label" placeholder="" required class="form-control" [formControlName]="'firstName'">
+          <label for="first-name-label">Enter first name</label>
+        </div>
+        <div class="form-floating p-1 g-col-6">
+          <input type="text" name="" id="last-name-label" required placeholder="" class="form-control" [formControlName]="'lastName'">
+          <label for="last-name-label">Enter last name</label>
+        </div>
+        <div class="form-floating p-1 g-col-6">
+          <input type="text" name="" id="phone-number-label" required placeholder="" class="form-control" [formControlName]="'phoneNumber'">
+          <label for="phone-number-label">Enter phone number</label>
+        </div>
+        <div class="">
+         <span class="d-flex justify-content-center">
+         <button type="submit" class="btn btn-primary">Register</button>
+           </span>
+          <span class="d-flex justify-content-center">
+         <h6 class="h6">Already have account? <a routerLink="/login">Login</a></h6>
+           </span>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

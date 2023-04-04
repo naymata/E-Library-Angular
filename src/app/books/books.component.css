@@ -1,0 +1,17 @@
+.item img {
+  width: 64px;
+}
+
+.item {
+  margin: 0 15px;
+  text-align: center;
+}
+
+.item a:hover {
+  color: blue;
+}
+
+.card {
+  padding: 10px;
+  margin: 25px;
+}

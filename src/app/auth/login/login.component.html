@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="">
+    <div class="position-fixed top-50 start-50 translate-middle">
+      <form (ngSubmit)="login()" [formGroup]="loginForm">
+        <div class="grid-gap-0">
+          <div class="form-floating p-2 g-col-6">
+            <input type="text" id="username-label" class="form-control" required placeholder=""
+                   [formControlName]="'username'">
+            <label for="username-label">Enter username</label>
+            <span *ngIf="!loginForm.get('username')?.valid && loginForm.get('username')?.touched" style="color:red;">
+                                  Username is empty
+            </span>
+          </div>
+          <div class="form-floating p-2 g-col-6">
+              <input type="password" id="password-label" class="form-control" required placeholder=""
+                     [formControlName]="'password'" name="password">
+            <label for="password-label">Enter password</label>
+              <span *ngIf="!loginForm.get('password')?.valid && loginForm.get('password')?.touched" style="color:red;">
+                                  Password is empty
+            </span>
+          </div>
+        </div>
+        <div class="grid-gap-0 column-gap-3 buttons">
+       <span class="p-2 g-col-6">
+       <button class="btn btn-primary p-2 g-col-6">Login</button>
+       </span>
+          <span class="p-2 g-col-6">
+       <button routerLink="/register" class="btn btn-primary p-2 g-col-6">Register</button>
+       </span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

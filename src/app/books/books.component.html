@@ -1,0 +1,21 @@
+<div class="container text-center">
+  <div class="" style="padding-top: 20px;">
+    <h4 class="h4">Books</h4>
+  </div>
+  <div class="container">
+    <div class="row">
+      <ng-container *ngFor="let item of items">
+        <div class="card col-md-3">
+          <a (click)="goToBook(item)">
+            <h4 class="h4">{{item.title}}</h4>
+          <h6 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.author}}</h6>
+          <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.publishedOn}}</p>
+          <p><strong>Price:</strong> ${{item.price}}</p>
+          </a>
+          <button class="btn btn-primary" (click)="addToCart(item)">Add to cart</button>
+        </div>
+      </ng-container>
+
+    </div>
+  </div>
+</div>
